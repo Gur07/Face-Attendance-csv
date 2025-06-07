@@ -74,3 +74,29 @@ Hitesh,14:37:10
 
 ---
 
+## 🚀 How It Works
+
+1. Loads reference images from the `students/` folder
+2. Extracts 128-dimensional face encodings
+3. Captures webcam video in real time
+4. Detects and compares faces using `face_recognition`
+5. If a match is found:
+   - Displays name on the video feed
+   - Logs the attendance into `sheet.csv`
+---
+
+## 📦 Installation
+
+> ⚠️ Requires Python 3.6–3.10 and CMake for `dlib` installation.
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/AutoAttend.git
+cd AutoAttend
+
+# Create a virtual environment (optional)
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install cmake dlib face_recognition opencv-python numpy
