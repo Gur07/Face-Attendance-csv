@@ -33,17 +33,15 @@ for i in range(len(path)):
         print("I wasn't able to locate any faces in at least one of the images. Check the image files. Aborting...")
         quit()
 
-
+#Names
 known_face_names = [
-    "Gurmehar",
     "Joe Biden",
-    "Hitesh",
     "harshit"
 ]
 face_locations = []
 face_encodings = []
 face_names = []
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 process_this_frame = True
 
 while True :
@@ -79,11 +77,7 @@ while True :
         right *= 4
         bottom *= 4
         left *= 4
-
-        # Draw a box around the face
         cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
-
-        # Draw a label with a name below the face
         cv2.rectangle(frame, (left, bottom - 35), (right, bottom), (0, 0, 255), cv2.FILLED)
         font = cv2.FONT_HERSHEY_DUPLEX
         cv2.putText(frame, name, (left + 6, bottom - 6), font, 1.0, (255, 255, 255), 1)
